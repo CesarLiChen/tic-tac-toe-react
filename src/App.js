@@ -4,7 +4,7 @@ import Square from "./components/Square";
 function App() {
   return (
     <div className="App">
-      <Square />
+      <Square symbol="X"/>
     </div>
   );
 }
