@@ -1,11 +1,16 @@
 import React from "react";
-import Square from "./components/Square";
 import Board from "./components/Board";
+
+const board = [
+  "X", "O", "X",
+  " ", "O", " ",
+  " ", "X", " ",
+]
 
 function App() {
   return (
     <div>
-      <Board />
+      <Board board={board} />
     </div>
   );
 }
