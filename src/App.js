@@ -1,16 +1,10 @@
 import React from "react";
-import Board from "./components/Board";
-
-const board = [
-  "X", "O", "X",
-  " ", "O", " ",
-  " ", "X", " ",
-]
+import Game from "./components/Game"
 
 function App() {
   return (
     <div>
-      <Board board={board} />
+      <Game />
     </div>
   );
 }
