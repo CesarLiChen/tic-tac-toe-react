@@ -5,7 +5,7 @@ function Square(props) {
   return (
     <div
       className="square"
-      onClick={() => props.onClicked(props.symbol, props.id)}
+      onClick={() => props.onSquareClick()}
     >
       {props.symbol}
     </div>

@@ -15,7 +15,7 @@ function Board(props) {
           id={index}
           symbol={symbol} 
           key={index} 
-          onClicked={clicked} 
+          onSquareClick={() => props.onBoardClick(index)} 
         />
       ))}
     </div>

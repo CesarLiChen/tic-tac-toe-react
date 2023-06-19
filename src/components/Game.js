@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Board from "./Board";
 
 const board = [
@@ -7,11 +7,19 @@ const board = [
   " ", "X", " ",
 ]
 
+const X_SYMBOL = "X";
+const O_SYMBOL = "O";
+
 function Game() {
+
+  const [currPlayer, setCurrentPlayer] = useState(X_SYMBOL);
+
   return (
     <div>
-      <Board board={board} />
+      <Board board={board} onBoardClick={(index) => setCurrentPlayer(O_SYMBOL)}/>
+      {currPlayer}
     </div>
+    
   );
 }
 
