@@ -14,12 +14,15 @@ function Game() {
 
   const [currPlayer, setCurrentPlayer] = useState(X_SYMBOL);
 
+  function handleBoardClick(index) {
+    setCurrentPlayer(currPlayer === X_SYMBOL ? O_SYMBOL : X_SYMBOL);
+  }
+
   return (
     <div>
       <Board 
         board={board} 
-        onBoardClick={(index) => 
-          setCurrentPlayer(currPlayer === X_SYMBOL ? O_SYMBOL : X_SYMBOL)}
+        onBoardClick={handleBoardClick}
       />
       {currPlayer}
     </div>
