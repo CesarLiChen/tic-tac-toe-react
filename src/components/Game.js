@@ -16,7 +16,11 @@ function Game() {
 
   return (
     <div>
-      <Board board={board} onBoardClick={(index) => setCurrentPlayer(O_SYMBOL)}/>
+      <Board 
+        board={board} 
+        onBoardClick={(index) => 
+          setCurrentPlayer(currPlayer === X_SYMBOL ? O_SYMBOL : X_SYMBOL)}
+      />
       {currPlayer}
     </div>
     
