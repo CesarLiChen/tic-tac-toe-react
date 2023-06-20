@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Board from "./Board";
+import WinnerModal from "./WinnerModal";
 
 const startingBoard = [
   " ", " ", " ",
@@ -53,6 +54,7 @@ function Game() {
       />
       {currPlayer}
       {getWinner()}
+      <WinnerModal winner="X" />
     </div>
     
   );
