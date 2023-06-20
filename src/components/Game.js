@@ -3,9 +3,9 @@ import Board from "./Board";
 import WinnerModal from "./WinnerModal";
 
 const startingBoard = [
-  " ", " ", " ",
-  " ", " ", " ",
-  " ", " ", " ",
+  "", "", "",
+  "", "", "",
+  "", "", "",
 ]
 
 const X_SYMBOL = "X";
@@ -17,13 +17,12 @@ function Game() {
   const [currPlayer, setCurrentPlayer] = useState(X_SYMBOL);
 
   function handleBoardClick(index) {
-    if(board[index] === " ") {
+    if(board[index] === "") {
       const newBoard = [...board];
       newBoard[index] = currPlayer;
       setBoard(newBoard);
-    }
-
-    setCurrentPlayer(currPlayer === X_SYMBOL ? O_SYMBOL : X_SYMBOL);
+      setCurrentPlayer(currPlayer === X_SYMBOL ? O_SYMBOL : X_SYMBOL);
+    }    
   }
 
   function getWinner() {
@@ -45,16 +44,15 @@ function Game() {
     return winningCombo ? board[winningCombo[0]] : false;
   }
 
-  console.log(getWinner());
+  const winner = getWinner();
+  
   return (
     <div>
       <Board 
         board={board} 
         onBoardClick={handleBoardClick}
       />
-      {currPlayer}
-      {getWinner()}
-      <WinnerModal winner="X" />
+      {winner && <WinnerModal winner={winner} />}
     </div>
     
   );
